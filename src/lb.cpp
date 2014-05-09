@@ -116,8 +116,8 @@ int zmq::lb_t::sendpipe (msg_t *msg_, pipe_t **pipe_)
     more = msg_->flags () & msg_t::more? true: false;
     if (!more) {
         pipes [current]->flush ();
-		if (++current >= active)
-			current = 0;
+	if (++current >= active)
+	    current = 0;
     }
 
     //  Detach the message from the data buffer.
