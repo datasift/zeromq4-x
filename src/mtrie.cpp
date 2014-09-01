@@ -289,7 +289,6 @@ bool zmq::mtrie_t::rm_helper (unsigned char *prefix_, size_t size_,
     if (!size_) {
         if (pipes) {
             pipes_t::size_type erased = pipes->erase (pipe_);
-            zmq_assert (erased == 1);
             if (pipes->empty ()) {
                 delete pipes;
                 pipes = 0;
